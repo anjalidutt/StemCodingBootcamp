@@ -1,4 +1,4 @@
-def encryptFile(to_encrypt):
+def encryptFile(to_encrypt): 
     my_file = open(to_encrypt, "r")
     lines = my_file.readlines()
     line_counter=0
