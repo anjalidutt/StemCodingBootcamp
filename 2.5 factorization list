@@ -1,0 +1,21 @@
+def factorization_list (n):
+    if n<=3:
+        return[i for i in range(n,n+1) if i>1]
+    prime_list=[2,3]
+    factorization_list=[]
+    for i in prime_list:
+        while n%i==0:
+            factorization_list.append(i)
+            n=n//i
+    for i in range(5,n+1):
+        for j in range(len(prime_list)):
+            print
+            if i % prime_list[j]==0:
+                break
+            if j==len(prime_list)-1:
+                prime_list.append(i)
+                while n%i==0:
+                    factorization_list.append(i)
+                    n=n//i
+    return factorization_list
+print(factorization_list(120))
