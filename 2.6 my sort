@@ -1,0 +1,29 @@
+def my_sort(to_sort):
+    if len(to_sort)<2:
+        return to_sort
+    else:    
+        midpoint = len(to_sort)//2
+        left_sort = to_sort[:midpoint]
+        right_sort = to_sort[midpoint:]
+        my_sort(left_sort)
+        my_sort(right_sort)
+        t1=t2=t3=0
+        while t1< len(left_sort) and t2<len(right_sort):
+            if left_sort[t1]<right_sort[t2]:
+                to_sort[t3]=left_sort[t1]
+                t1+=1
+            else:
+                to_sort[t3]=right_sort[t2]
+                t2+=1
+            
+            t3+=1
+        
+        while t1<len(left_sort):
+            to_sort[t3] = left_sort[t1]
+            t1+=1
+            t3+=1
+        while t2< len(right_sort):
+            to_sort[t3]=right_sort[t2]
+            t2+=1
+            t3+=1
+        return to_sort
