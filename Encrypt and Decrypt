@@ -1,0 +1,35 @@
+def encryptFile(to_encrypt):
+    my_file = open(to_encrypt, "r")
+    lines = my_file.readlines()
+    line_counter=0
+    for line in lines:
+        modified_str=""
+        for letter in range(len(line)):
+            if (ord(line[letter])>=97 and ord(line[letter])<=122) :
+                modified_str+=chr((ord(line[letter])-96)%26+97)
+
+            elif((ord(line[letter])>=65 and ord(line[letter])<=90)):
+                modified_str+=(chr((ord(line[letter])-64)%26+65))
+            else:
+                modified_str+=line[letter]
+        lines[line_counter]=modified_str
+        print(lines[line_counter])
+        
+
+
+def decryptFile(to_decrypt):
+    my_file = open(to_decrypt, "r")
+    lines = my_file.readlines()
+    line_counter=0
+    for line in lines:
+        modified_str=""
+        for letter in range(len(line)):
+            if (ord(line[letter])>=97 and ord(line[letter])<=122) :
+                modified_str+=chr((ord(line[letter])-98)%26+97)
+
+            elif((ord(line[letter])>=65 and ord(line[letter])<=90)):
+                modified_str+=(chr((ord(line[letter])-66)%26+65))
+            else:
+                modified_str+=line[letter]
+        lines[line_counter]=modified_str
+        print(lines[line_counter])
