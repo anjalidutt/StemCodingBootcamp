@@ -1,0 +1,12 @@
+def primes(n):
+    if n<=3:
+        return[i for i in range(2,n+1)]
+    prime_list=[2,3]
+    for i in range(5,n+1):
+        for j in range(len(prime_list)):
+            print
+            if i % prime_list[j]==0:
+                break
+            if j==len(prime_list)-1:
+                prime_list.append(i)
+    return prime_list
