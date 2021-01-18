@@ -1,0 +1,19 @@
+def unscramble(given_word):
+    my_file = open("eng_words.txt", "r")
+    lines = my_file.readlines()
+    word_list=[]
+    
+    for word in lines:
+        word = word.strip('\n')
+        if(len(given_word)==len(word)):
+            comma_sep = list(word)
+            i=0
+            while len(comma_sep)>0:
+               try:
+                   comma_sep.remove(given_word[i])
+               except ValueError:
+                   break
+                   
+               i+=1            
+            if len(comma_sep)==0:
+                word_list.append(word)
