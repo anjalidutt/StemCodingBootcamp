@@ -1,0 +1,20 @@
+
+def game():
+    user_inp = int(input("You are on a boat and the high tide drifts you far away, the boat is shaky and you see an island nearby. What will you do?\n Enter '1' to jump off or '2' to stay on boat: "))
+    if user_inp == 1:
+            user_inp = int(input("You are able to reach the island. What will you do here? \n Enter '1' if you will explore the island hoping to find civilisation or '2' if you will build a sign with big sticks and other material to attract helicopters that might fly by: "))
+            if user_inp==2:
+                print("Great job! A helicopter found you")
+            else:
+                print("Oh no! Animals attacked you. Game over")
+    else:
+        user_inp=int(input("Oh no!, the boat toppled over.\n Enter '1' if you would try to make it stand up again, or '2' if you would try to swim to a shore: "))
+        if user_inp ==1:
+           user_inp = int(input("You are able to reach the shore. What will you do here? \n Enter '1' if you will explore the island hoping to find civilisation or '2' if you will build a sign with big sticks and other material to attract helicopters that might fly by: "))
+           if user_inp==2:
+                print("Great job! A helicopter found you")
+           else:
+                print("Oh no! Animals attacked you. Game over")
+        else:
+            print("Oh no! The water was too cold and you couldn't put the boat back up on time. Game Over")
+game(1)
